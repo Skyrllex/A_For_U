@@ -13,6 +13,7 @@ import android.view.ViewGroup;
  * Use the {@link AddListItemFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
+
 public class AddListItemFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
@@ -40,9 +41,9 @@ public class AddListItemFragment extends Fragment {
     public static AddListItemFragment newInstance(String param1, String param2) {
         AddListItemFragment fragment = new AddListItemFragment();
         Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
+        /*args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+        fragment.setArguments(args);*/
         return fragment;
     }
 
@@ -50,8 +51,8 @@ public class AddListItemFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+           /* mParam1 = getArguments().getString(ARG_PARAM1);
+            mParam2 = getArguments().getString(ARG_PARAM2);*/
         }
     }
 
