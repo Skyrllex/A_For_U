@@ -2,22 +2,26 @@ package com.example.aforu;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AddListItemFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 
 public class AddListItemFragment extends Fragment {
+    Button btnSave;
+    Button btnDelete;
+    TextView textTask;
+    TextView textSubTask;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -41,9 +45,9 @@ public class AddListItemFragment extends Fragment {
     public static AddListItemFragment newInstance(String param1, String param2) {
         AddListItemFragment fragment = new AddListItemFragment();
         Bundle args = new Bundle();
-        /*args.putString(ARG_PARAM1, param1);
+        args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);*/
+        fragment.setArguments(args);
         return fragment;
     }
 
@@ -51,15 +55,41 @@ public class AddListItemFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-           /* mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);*/
+           mParam1 = getArguments().getString(ARG_PARAM1);
+           mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        View inflaterView =inflater.inflate(R.layout.fragment_add_list_item, container, false);
+
+        btnSave = (Button) inflaterView.findViewById(R.id.buttonSaveItem);
+        btnDelete = (Button) inflaterView.findViewById(R.id.buttonDeleteItem);
+        textTask = (TextView) inflaterView.findViewById(R.id.textTask);
+        textSubTask= (TextView) inflaterView.findViewById(R.id.textSubTask);
+
+        btnSave.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //funSaveItem
+            }
+        });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //funDeleteItem
+            }
+        });
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_list_item, container, false);
+        return inflaterView;
+    }
+
+    void funSaveItem()
+    {
+
     }
 }

@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         btnToday = (Button) findViewById(R.id.buttonToday);
         btnWork = (Button) findViewById(R.id.buttonWork);
         btnMain = (LinearLayout) findViewById(R.id.linearLayout);
+
         btnAddTask.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -35,6 +36,17 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        funTodayList();
+
+    }
+
+
+    void funTodayList()
+    {
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ListFragment listfragment =ListFragment.newInstance(1);
+        ft.replace(R.id.frameLayout, listfragment);
+        ft.commit();
     }
 
     void funCleanActivity()
