@@ -62,7 +62,9 @@ public class MainActivity extends AppCompatActivity {
         AddListItemFragment addlistitemfragment =AddListItemFragment.newInstance("a","af");
         ft.replace(R.id.frameLayout, addlistitemfragment);
         ft.commit();
+
     }
+
 
 
 }

@@ -13,20 +13,24 @@
         android:layout_margin="8sp"
         android:orientation="vertical">
 
-        <TextView
+        <EditText
             android:id="@+id/textTask"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/text_task"
-            android:textSize="20sp" />
+            android:descendantFocusability="blocksDescendants"
+            android:hint="@string/text_task"
+            android:textSize="20sp"
 
-        <TextView
+            />
+
+        <EditText
             android:id="@+id/textSubTask"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8sp"
             android:layout_weight="1"
-            android:text="@string/text_subtask"
+            android:gravity="top|left"
+            android:hint="@string/text_subtask"
             android:textSize="16sp" />
 
         <Button

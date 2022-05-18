@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,8 +20,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class AddListItemFragment extends Fragment {
     Button btnSave;
     Button btnDelete;
-    TextView textTask;
-    TextView textSubTask;
+    EditText textTask;
+    EditText textSubTask;
 
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
@@ -67,13 +68,13 @@ public class AddListItemFragment extends Fragment {
 
         btnSave = (Button) inflaterView.findViewById(R.id.buttonSaveItem);
         btnDelete = (Button) inflaterView.findViewById(R.id.buttonDeleteItem);
-        textTask = (TextView) inflaterView.findViewById(R.id.textTask);
-        textSubTask= (TextView) inflaterView.findViewById(R.id.textSubTask);
+        textTask = (EditText) inflaterView.findViewById(R.id.textTask);
+        textSubTask= (EditText) inflaterView.findViewById(R.id.textSubTask);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //funSaveItem
+                funSaveItem();
             }
         });
 
@@ -90,6 +91,9 @@ public class AddListItemFragment extends Fragment {
 
     void funSaveItem()
     {
-
+        String nameTask = textTask.getText().toString();
+        String nameSubTask = textSubTask.getText().toString();
+        //Fragment AddListItemFragment = com.example.aforu.AddListItemFragment.newInstance(nameTask,nameSubTask);
     }
+
 }
